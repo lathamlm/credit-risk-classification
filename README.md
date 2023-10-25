@@ -7,13 +7,21 @@ This challenge focused on analyzing lending data to train and evaluate a model b
 
 1. The resources file was read into the notebook, and the data was split into labels (`y`) and features (`X`)
 
+  ![og_data](Images/og_data.png)
+
 2. The data was split into training and testing datasets using the `train_test_split` module
 
 3. A logistic regression model, using the `LogisticRegression` method, was used to initialize and fit the model using the training data
 
 4. Predictions were then made on the model using the testing data
 
-5. The model's performance was evaluated by creating a confusion matrix and classification report
+5. The model's performance was evaluated by creating a confusion matrix (first) and classification report (second)
+
+  ### Confusion Matrix
+  ![confusion_matrix](Images/confusion_matrix.png)<br>
+
+  ### Classification Report
+  ![class_report](Images/class_report.png)
 
 ____________________________________________________________________________________
 
@@ -42,4 +50,4 @@ Because of the significant differences in volume, one consideration may to be in
 
 I would confidently recommend this model's use in identifying healthy loans, but would like to see the accuracy and precision increase on the high-risk loans before recommending the model for identification for those.<br>
 
-I do believe the high-risk loan accuracy is high enough that the model could be used as a guideline for flagging possible high-risk loans, but I would not be confident in using this to identify high-risk loans.
+I do believe the high-risk loan accuracy is high enough that the model could be used as a guideline for flagging possible high-risk loans, but I would not be confident in using this to identify high-risk loans in its current state.

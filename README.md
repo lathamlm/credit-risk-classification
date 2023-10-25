@@ -3,41 +3,43 @@ Module 20 Challenge
 
 ## ANALYSIS OVERVIEW
 
-This challenge analyzed lending data 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+This challenge focused on analyzing lending data to train and evaluate a model based on loan risk. The dataset used for the analysis consisted of historical lending activity from a peer-to-peer lending services company, with a goal to identify borrowers' creditworthiness. The following steps were taken to complete this analysis:
 
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
+1. The resources file was read into the notebook, and the data was split into labels (`y`) and features (`X`)
+
+2. The data was split into training and testing datasets using the `train_test_split` module
+
+3. A logistic regression model, using the `LogisticRegression` method, was used to initialize and fit the model using the training data
+
+4. Predictions were then made on the model using the testing data
+
+5. The model's performance was evaluated by creating a confusion matrix and classification report
+
+____________________________________________________________________________________
 
 ## RESULTS
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
 
 * Healthy loans (`0`):
-  * Accuracy: 
-  * Precision:
-  * Recall: 
+  * Accuracy: the accuracy of healthy loans was 100% or 1.00; this indicates the model correctly predicted each observation
+  * Precision: the precision of healthy loans was also 100% or 1.00; this indicates that all instances where the model predicted healthy loans turned out to be true healthy loans
+  * Recall: the recall of healthy loans was 99% or 0.99; this indicates that of the true healthy loans, 99% of them were correctly predicted to be healthy loans
 
 
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
+* High-Risk loans (`1`):
+  * Accuracy: the accuracy of high-risk loans was 88% or 0.88; this indicates the model correctly predicted 88% of the observations
+  * Precision: the precision of high-risk loans was 85% or 0.85; this indicates that 85% of the instances where the model predicted high-risk loans turned out to be true high-risk loans
+  * Recall: the recall of high-risk loans was 91% or 0.91; this indicates that of the true high-risk loans, 91% were correctly predicted to be high-risk loans
 
 
-
-* High Risk loans (`1`):
-  * Accuracy: 
-  * Precision:
-  * Recall: 
-
-  
-  * Description of Model 2 Accuracy, Precision, and Recall scores.
+____________________________________________________________________________________
 
 ## SUMMARY
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+Overall, this model performed very well in predicting both healthy and high-risk loans, with a combined accuracy of 99%.  Healthy loans saw better performance with an accuracy of 100%, while high-risk loans had a lower accuracy of 88%. See above `RESULTS` for more details.<br>
 
-If you do not recommend any of the models, please justify your reasoning.
+Because of the significant differences in volume, one consideration may to be increase the volume of high-risk loans to see if that improves the model's accuracy.  Healthy loan volume was 18,765, compared to high-risk loans, which only had 619.<br>
+
+I would confidently recommend this model's use in identifying healthy loans, but would like to see the accuracy and precision increase on the high-risk loans before recommending the model for identification for those.<br>
+
+I do believe the high-risk loan accuracy is high enough that the model could be used as a guideline for flagging possible high-risk loans, but I would not be confident in using this to identify high-risk loans.
